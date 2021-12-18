@@ -80,6 +80,7 @@ public class OrderService {
         return repository.findByRegisterDayAndSalesMan_Id(fecha.getTime(), id);
    }
 
+
    
    public List<Order> findByStatusAndSalesMan_Id(final String status, final int id){
        return (List<Order>)repository.findByStatusAndSalesMan_Id(status, id);
