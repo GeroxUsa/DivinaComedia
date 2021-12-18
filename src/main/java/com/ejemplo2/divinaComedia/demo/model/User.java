@@ -5,16 +5,12 @@
  */
 package com.ejemplo2.divinaComedia.demo.model;
 
-import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
@@ -23,18 +19,23 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "user")
-
-public class User implements Serializable{
+@Document(collection = "usuarios")
+public class User {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name="user_mail",unique = true, length = 50, nullable = false)
-    private String email;
-    @Column(name="user_password", length = 50, nullable = false)
-    private String password;
-    @Column(name="user_name", length = 80, nullable = false)
+    private String identification;
     private String name;
+    private Date birthtDay;
+    private String monthBirthtDay;
+    private String address;
+    private String cellPhone;
+    private String email;
+    private String password;
+    private String zone;
+    private String type;
+
+  
+    
+    
 }

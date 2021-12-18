@@ -46,4 +46,12 @@ public class UserRepository {
        return repository.findByEmailAndPassword(email, password);
    }
    
+   public List<User> getUserByIdOrEmailOrName(Integer id, String email, String name){
+       return repository.findByIdOrEmailOrName(id, email, name);
+   }
+    
+   public void delete(int id){
+      repository.deleteById(id);
+   }
+
 }
